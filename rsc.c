@@ -166,17 +166,6 @@ void resource_table_init(int RPMsgRole, void **table_ptr, int *length)
 
 	}
 #endif
-#else
-
-    /* For the slave application let's wait until the resource_table is correctly initialized */
-    int wait = 1000000;
-    while(resource_table.vring1.da != VRING_RX_ADDRESS && wait-- > 0) {
-        asm("nop");
-    }
-
-#endif
-
-
 #endif
 #endif
 
